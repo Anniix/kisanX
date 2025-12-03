@@ -1,0 +1,359 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #f9fafb;
+  color: #1f2937;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+
+  /* Background Image */
+  background-image: url("farmer.jpg"); /* put your image path here */
+  background-size: cover;       /* makes the image cover whole page */
+  background-repeat: no-repeat; /* prevents tiling */
+  background-attachment: fixed; /* keeps image fixed while scrolling */
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem 1rem;
+  width: 100%; /* Ensures container doesn't overflow on small screens */
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  animation: fadeIn 1.2s ease;
+  margin-bottom: 2rem; /* Add spacing below hero */
+}
+
+.hero h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Section Titles */
+h3 {
+  font-size: 1.6rem;
+  margin: 2rem 0 1rem;
+  text-align: center;
+  position: relative;
+}
+
+h3::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #16a34a;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+  animation: growLine 0.8s ease forwards;
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.8rem;
+  margin-top: 1rem;
+}
+
+/* Product Card */
+.card {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  padding: 1rem;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: slideUp 0.7s ease forwards;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+/* Card hover effect */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Pagination buttons */
+#pagination {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+#pagination button {
+  margin: 0 3px;
+  padding: 8px 14px; /* Slightly larger touch target */
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+  display: inline-block;
+}
+
+#pagination button:hover {
+  background: #f0f0f0;
+}
+#pagination button.active-page {
+  font-weight: 700;
+  background-color: #4CAF50;
+  color: white;
+  border-color: #4CAF50;
+}
+
+/* Price styling */
+.price {
+  font-weight: 700;
+  color: #16a34a;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.price .old {
+  text-decoration: line-through;
+  color: #9ca3af;
+  margin-right: 6px;
+  font-size: 0.9rem;
+}
+
+.badge {
+  background: #ef4444;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+/* Product Info */
+.card h4 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  color: #111827;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+/* Add to Cart Button */
+.add-to-cart {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+  width: 100%; /* Full width on card for better mobile touch */
+}
+
+.add-to-cart:hover {
+  background: linear-gradient(135deg, #15803d, #16a34a);
+  transform: scale(1.02);
+}
+
+/* Pagination Wrapper Class (if used alongside ID) */
+.pagination {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.pagination button {
+  margin: 0 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pagination button:hover {
+  background: #16a34a;
+  color: #fff;
+  border-color: #16a34a;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(-20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes slideUp {
+  from {opacity: 0; transform: translateY(40px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes growLine {
+  from {width: 0;}
+  to {width: 60px;}
+}
+
+/* Additional Product Grid Styling */
+.products-list .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.product-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: box-shadow 0.3s;
+}
+
+.product-card:hover {
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.15);
+}
+
+.product-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.product-card button {
+  margin-top: 10px;
+  background: #22c55e;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.product-card button:hover {
+  background: #16a34a;
+}
+
+/* Team Slider */
+.team-slider {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 1rem 0.5rem;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+.team-slider::-webkit-scrollbar {
+  display: none; /* hide scrollbar */
+}
+.team-slider .team-card {
+  flex: 0 0 250px;
+  scroll-snap-align: start;
+}
+
+/* =========================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================= */
+
+/* Tablet and smaller desktops (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .container {
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* Tablets (max-width: 768px) */
+@media (max-width: 768px) {
+  .hero {
+    padding: 2.5rem 1.5rem;
+  }
+  
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Allow slightly smaller cards */
+    gap: 1.2rem;
+  }
+  
+  h3 {
+    font-size: 1.4rem;
+  }
+}
+
+/* Mobile Phones (max-width: 480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 1.5rem 1rem;
+  }
+
+  .hero {
+    padding: 2rem 1rem;
+    border-radius: 15px;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .grid, .products-list .grid {
+    grid-template-columns: 1fr; /* Single column on very small screens */
+    gap: 1.5rem;
+  }
+
+  .card img {
+    height: 200px; /* Taller images for single column view */
+  }
+
+  .team-slider .team-card {
+    flex: 0 0 85%; /* Cards take up most of width on mobile slider */
+  }
+}
